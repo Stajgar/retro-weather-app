@@ -11,7 +11,10 @@ export default function Weather() {
     temperature: 3,
     rain: 1,
     humidity: 60,
-    wind: 32
+    wind: 32,
+    time: "15:00",
+    tempMax: 4,
+    tempMin: 2,
   };
 
   return (
@@ -71,7 +74,50 @@ export default function Weather() {
             </div>
           </div>
         </div>
-        <div className="row weather-forecast"></div>
+            <div className="row weather-forecast">
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+              </div>
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+              </div>
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+              </div>
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+              </div>
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+              </div>
+              <div class="col-2">
+                  <h3>{weatherData.time}</h3>
+                  <img src={weatherData.imgUrl} alt="icon" />
+                  <div class="weather-forecast-temperature temperature">
+                      <strong>{weatherData.tempMax}°C</strong>{" "}{weatherData.tempMin}°C
+                  </div>
+            </div>
+        </div>
       </div>
     </div>
   );

@@ -64,6 +64,7 @@
 
 .Weather .weather-forecast h3 {
   font-size: 16px;
+  font-weight: bold;
   margin: 0;
   padding: 0;
   color: #7b6fef;
@@ -72,12 +73,12 @@
 .Weather .weather-forecast img {
   height: 40px;
   width: 40px;
-  margin: 0;
+  margin: 5px;
   padding: 0;
 }
 
 .Weather .weather-forecast-temperature {
-  color: #fff;
+  color: #7b6fef;
   font-size: 14px;
 }
 
@@ -108,8 +109,8 @@
   margin-right: 30px;
 }
 
-.Weather .forecast {
+.Weather .weather-forecast {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
