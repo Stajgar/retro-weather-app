@@ -14,7 +14,7 @@ export default function Footer() {
       <br />
       Open-source{" "}
       <a
-        href="https://github.com/Stajgar/First-Weather-App"
+        href="https://github.com/Stajgar/my-react-weather-app"
         target="_blank"
         rel="noopener noreferrer"
       >
