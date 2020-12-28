@@ -25,7 +25,8 @@
 
 .Weather .type-city-button {
   border: 3px solid #7b6fef;
-  margin-right: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .Weather .fa-search {
