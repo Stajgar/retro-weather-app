@@ -43,18 +43,10 @@
 }
 
 .Weather .units {
+  color: #7b6fef;
   position: relative;
   top: -30px;
   font-size: 20px;
-}
-
-.Weather .weather-temperature .active {
-  color: #7b6fef;
-  cursor: default;
-}
-
-.Weather .weather-temperature .active:hover {
-  text-decoration: none;
 }
 
 .Weather .more-info {
