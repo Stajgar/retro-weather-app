@@ -1,6 +1,8 @@
 .App {
   margin: 20px auto;
-  max-width: 702px;
+  max-width: 700px;
+  background-image: url("./img/90s.jpg");
+  background-size: cover;
 }
 
 body {
@@ -28,7 +30,4 @@ li {
   list-style: none;
 }
 
-.Footer {
-  font-size: 14px;
-  text-align: center;
-}
+
