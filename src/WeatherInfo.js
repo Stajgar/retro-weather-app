@@ -28,58 +28,14 @@ export default function WeatherInfo(props) {
           <div className="col-4">
             <div className="more-info">
               <ul>
-                <li>Chance of rain: %</li>
+                <li>Feels like: {props.data.feels}°C</li>
                 <li>Humidity: {props.data.humidity}%</li>
                 <li>Wind: {props.data.wind} km/h</li>
               </ul>
             </div>
           </div>
         </div>
-            <div className="row weather-forecast">
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-              </div>
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-              </div>
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-              </div>
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-              </div>
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-              </div>
-              <div className="col-2">
-                  <h3>{props.data.time}</h3>
-                  <img src={props.data.imgUrl} alt="icon" />
-                  <div className="weather-forecast-temperature temperature">
-                      <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-                  </div>
-            </div>
         </div>
-      </div>
         </div>
     );
 }
