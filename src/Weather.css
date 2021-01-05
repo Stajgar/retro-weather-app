@@ -37,13 +37,18 @@
   text-align: center;
 }
 
+.Weather .City {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .Weather .temperature {
-  color: #7b6fef;
+  color: #fff;
   font-size: 80px;
 }
 
 .Weather .units {
-  color: #7b6fef;
+  color: #fff;
   position: relative;
   top: -30px;
   font-size: 20px;
@@ -67,7 +72,6 @@
 .Weather .WeatherDescription {
   color: #c944be;
   text-transform: capitalize;
-  margin-bottom: 0;
 }
 
 .Weather canvas {
