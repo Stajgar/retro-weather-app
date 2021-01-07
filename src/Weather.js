@@ -40,6 +40,18 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
+  function handleGeolocation(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiVariable = `lat=${latitude}&lon=${longitude}`;
+    search(apiVariable);
+  }
+
+  function chooseCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(handleGeolocation);
+  }
+
   if (weatherData.ready) {
   return (
     <div className="Weather">
@@ -56,7 +68,7 @@ export default function Weather(props) {
             <button type="submit" className="type-city-button">
               <i className="fas fa-search"></i>
             </button>
-            <button className="current-location-button">
+            <button className="current-location-button" onClick={chooseCurrentLocation}>
               <i className="fas fa-map-marker-alt"></i>
             </button>
           </div>
