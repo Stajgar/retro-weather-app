@@ -10,7 +10,6 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       city: response.data.name,
@@ -53,32 +52,32 @@ export default function Weather(props) {
   }
 
   if (weatherData.ready) {
-  return (
-    <div className="Weather">
-      <form className="mb-4" onSubmit={handleSubmit}>
-        <div className="search-area">
-          <div className="type-city-area">
-            <input
-              type="text"
-              placeholder="Type City..."
-              autoComplete="off"
-              className="type-city-input"
-              onChange={handleCityChange}
-            />
-            <button type="submit" className="type-city-button">
-              <i className="fas fa-search"></i>
-            </button>
-            <button className="current-location-button" onClick={chooseCurrentLocation}>
-              <i className="fas fa-map-marker-alt"></i>
-            </button>
+    return (
+      <div className="Weather">
+        <form className="mb-4" onSubmit={handleSubmit}>
+          <div className="search-area">
+            <div className="type-city-area">
+              <input
+                type="text"
+                placeholder="Type City..."
+                autoComplete="off"
+                className="type-city-input"
+                onChange={handleCityChange}
+              />
+              <button type="submit" className="type-city-button">
+                <i className="fas fa-search"></i>
+              </button>
+              <button className="current-location-button" onClick={chooseCurrentLocation}>
+                <i className="fas fa-map-marker-alt"></i>
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
-      <WeatherInfo data={weatherData} />
-      <WeatherForecast city={weatherData.city} />
-    </div>
-  ); } else {
-    search();
-    return "Loading...";
+        </form>
+        <WeatherInfo data={weatherData} />        
+      </div>
+    );
+    } else {
+      search();
+      return "Loading...";
   }
 }

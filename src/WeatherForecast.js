@@ -10,18 +10,18 @@ export default function WeatherForecast(props) {
   function handleForecastResponse(response) {
     setForeacast(response.data);
     setLoaded(true);
-    console.log(response.data);
   }
 
   if (loaded && props.city === forecast.city.name) {
     return (
       <div className="WeatherForecast row" >
-        <WeatherForecastPreview data={forecast.list[0]} />
-        <WeatherForecastPreview data={forecast.list[1]} />
-        <WeatherForecastPreview data={forecast.list[2]} />
-        <WeatherForecastPreview data={forecast.list[3]} />
-        <WeatherForecastPreview data={forecast.list[4]} />
+        <WeatherForecastPreview data={forecast.list[0]} unit={props.unit} />
+        <WeatherForecastPreview data={forecast.list[1]} unit={props.unit} />
+        <WeatherForecastPreview data={forecast.list[2]} unit={props.unit} />
+        <WeatherForecastPreview data={forecast.list[3]} unit={props.unit} />
+        <WeatherForecastPreview data={forecast.list[4]} unit={props.unit} />
       </div>
+      
     );
   } else {
     let apiKey = "922c46ab82d8163152e55bf43505a833";
@@ -31,48 +31,3 @@ export default function WeatherForecast(props) {
     return null;
   }
 }
-//   <div className="row weather-forecast">
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//       <img src={props.data.imgUrl} alt="icon" />
-//         <div className="weather-forecast-temperature temperature">
-//           <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//         </div>
-//     </div>
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//       <img src={props.data.imgUrl} alt="icon" />
-//       <div className="weather-forecast-temperature temperature">
-//         <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//       </div>
-//     </div>
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//         <img src={props.data.imgUrl} alt="icon" />
-//         <div className="weather-forecast-temperature temperature">
-//           <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//         </div>
-//     </div>
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//       <img src={props.data.imgUrl} alt="icon" />
-//       <div className="weather-forecast-temperature temperature">
-//         <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//       </div>
-//     </div>
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//       <img src={props.data.imgUrl} alt="icon" />
-//       <div className="weather-forecast-temperature temperature">
-//         <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//       </div>
-//     </div>
-//     <div className="col-2">
-//       <h3>{props.data.time}</h3>
-//       <img src={props.data.imgUrl} alt="icon" />
-//       <div className="weather-forecast-temperature temperature">
-//         <strong>{props.data.tempMax}°C</strong>{" "}{props.data.tempMin}°C
-//       </div>
-//     </div>
-// </div>
-    
