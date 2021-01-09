@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherForecast from "./WeatherForecast";
+import WeatherHeader from "./WeatherHeader";
+import WeatherDetails from "./WeatherDetails";
 
 export default function WeatherInfo(props) {
   const [unit, setUnit] = useState("celsius");
@@ -16,27 +17,20 @@ export default function WeatherInfo(props) {
     setUnit("celsius");
   }
 
-  function fahrenheitTemperature() {
-    return Math.round((props.data.temperature * 9) / 5 + 32);
-  }
-
-  function fahrenheitFeelsLike() {
-    return Math.round((props.data.feels * 9) / 5 + 32);
+  function fahrenheitTemperature(celsius_temperature) {
+    return Math.round((celsius_temperature * 9) / 5 + 32);
   }
 
   if (unit === "celsius") {
     return (
       <div className="WeatherInfo">
         <div className="city-info">
-          <div className="city-main-info">
-            <h1 className="City">{props.data.city}</h1>
-            <ul>
-              <li className="Date">
-                <FormattedDate date={props.data.date} />
-              </li>
-              <li className="WeatherDescription">{props.data.description}</li>
-            </ul>
-          </div>
+          <WeatherHeader
+            city={props.data.city}
+            date={props.data.date}
+            description={props.data.description}
+          />
+
           <div className="row">
             <div className="col-8">
               <div className="clearfix weather-temperature">
@@ -55,40 +49,29 @@ export default function WeatherInfo(props) {
                       </a>
                     </span>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <WeatherForecast unit={unit} city={props.data.city} />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-4">
-              <div className="more-info">
-                <ul>
-                  <li>Feels like: {props.data.feels}°C</li>
-                  <li>Humidity: {props.data.humidity}%</li>
-                  <li>Wind: {props.data.wind} km/h</li>
-                </ul>
-              </div>
-            </div>
+            <WeatherDetails
+              feels={props.data.feels}
+              humidity={props.data.humidity}
+              wind={props.data.wind}
+              unit={unit}
+            />
           </div>
         </div>
+        <WeatherForecast unit={unit} city={props.data.city} />
       </div>
     );
   } else {
     return (
       <div className="WeatherInfo">
         <div className="city-info">
-          <div className="city-main-info">
-            <h1 className="City">{props.data.city}</h1>
-            <ul>
-              <li className="Date">
-                <FormattedDate date={props.data.date} />
-              </li>
-              <li className="WeatherDescription">{props.data.description}</li>
-            </ul>
-          </div>
+          <WeatherHeader
+            city={props.data.city}
+            date={props.data.date}
+            description={props.data.description}
+          />
           <div className="row">
             <div className="col-8">
               <div className="clearfix weather-temperature">
@@ -98,7 +81,7 @@ export default function WeatherInfo(props) {
                 <div className="float-left">
                   <div className="WeatherTemperature">
                     <span className="temperature">
-                      {fahrenheitTemperature()}
+                      {fahrenheitTemperature(props.data.temperature)}
                     </span>
                     <span className="units">
                       <a href="/" onClick={showCelsius}>
@@ -107,25 +90,18 @@ export default function WeatherInfo(props) {
                       | °F
                     </span>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <WeatherForecast unit={unit} city={props.data.city} />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-4">
-              <div className="more-info">
-                <ul>
-                  <li>Feels like: {fahrenheitFeelsLike()}°F</li>
-                  <li>Humidity: {props.data.humidity}%</li>
-                  <li>Wind: {props.data.wind} km/h</li>
-                </ul>
-              </div>
-            </div>
+            <WeatherDetails
+              feels={fahrenheitTemperature(props.data.feels)}
+              humidity={props.data.humidity}
+              wind={props.data.wind}
+              unit={unit}
+            />
           </div>
         </div>
+        <WeatherForecast unit={unit} city={props.data.city} />
       </div>
     );
   }
