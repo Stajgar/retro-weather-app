@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast";
-
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -23,10 +21,10 @@ export default function Weather(props) {
     });
   }
 
-  function search() {
+  function search(query) {
     const apiKey = "922c46ab82d8163152e55bf43505a833";
     let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -39,16 +37,17 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  function handleGeolocation(position) {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    let apiVariable = `lat=${latitude}&lon=${longitude}`;
-    search(apiVariable);
+  function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    const apiKey = "922c46ab82d8163152e55bf43505a833";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
 
-  function chooseCurrentLocation(event) {
+  function getCurrentLocation(event) {
     event.preventDefault();
-    navigator.geolocation.getCurrentPosition(handleGeolocation);
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 
   if (weatherData.ready) {
@@ -67,17 +66,20 @@ export default function Weather(props) {
               <button type="submit" className="type-city-button">
                 <i className="fas fa-search"></i>
               </button>
-              <button className="current-location-button" onClick={chooseCurrentLocation}>
+              <button
+                className="current-location-button"
+                onClick={getCurrentLocation}
+              >
                 <i className="fas fa-map-marker-alt"></i>
               </button>
             </div>
           </div>
         </form>
-        <WeatherInfo data={weatherData} />        
+        <WeatherInfo data={weatherData} />
       </div>
     );
-    } else {
-      search();
-      return "Loading...";
+  } else {
+    search(city);
+    return "Loading...";
   }
 }

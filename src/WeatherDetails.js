@@ -5,6 +5,7 @@ export default function WeatherDetail(props) {
     celsius: `°C`,
     fahrenheit: `°F`,
   };
+
   return (
     <div className="col-4">
       <div className="more-info">
