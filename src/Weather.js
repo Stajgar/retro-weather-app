@@ -80,6 +80,6 @@ export default function Weather(props) {
     );
   } else {
     search(city);
-    return "Loading...";
+    return <div className="Loader">Loading...</div>;
   }
 }

@@ -84,3 +84,10 @@
   filter: drop-shadow(2px 2px 2px #7b6fef);
   image-rendering: pixelated;
 }
+.Loader {
+  margin-top: 5px;
+  margin-left: 10px;
+  color: #88d8df;
+  font-size: 18px;
+  
+}
