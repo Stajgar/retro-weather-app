@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# retro-weather-app
+
+## Description
+
+The goal of this project was to rebuild an application implemented in [Pixel Weather App](https://github.com/Stajgar/pixel-weather-app) using React. Main features:
+* search for weather data from desired city or web browser geolocation
+* Fahrenheit to Celsius unit conversion
+* display current weather (wind speed, precipitation, weather description)
+* display weather forecast
+
+## Approach
+
+Retro Weather App utilises OpenWeather API to provide real time data about weather in searched places. Frontend layer was built mainly using React and Bootstrap - a full list of technology and tools used to create this project from design to implementation can be found below.
+
+## Design
+
+Retro Weather App is inspired by vintage-looking, 90's Windows themed background and animated weather icons giving it retro vibe.
+
+## Live demo
+
+[Retro Weather App](https://clever-easley-a5d809.netlify.app/)
+
+## Tech stack & tools
+  * React 17.0.1
+  * Bootstrap 4.5.3
+  * Prettier 2.2.1
+  * Axios
+  * OpenWeather API
+  * Font Awesome
+  * GitHub
+  * Netlify
+  * Invision
+  * Adobe XD
+
+## Running instructions
+
+Clone the repository:
+
+`$ git clone https://github.com/Stajgar/retro-weather-app.git`
+
+To run this project locally, start the server using npm: 
+
+`$ npm start`
+
+Head to [localhost:3000](localhost:3000) in your browser to open the application.
+
+Type in the search bar your desired city and click the magnifier button. Then you’ll find out what the weather is there today. 
+
+Click the geolocation button to check what the weather is in your current area. 
+
+You can also change the temperature displayed in Celsius to Fahrenheits - it will work both on the current weather and the forecast.
+
+## Acknowledgments
+
+This application was created as part of SheCodes workshops which are a great way to start learning frontend development.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
