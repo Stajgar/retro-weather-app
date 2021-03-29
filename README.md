@@ -14,7 +14,7 @@ Retro Weather App utilises OpenWeather API to provide real time data about weath
 
 ## Design
 
-Retro Weather App is inspired by vintage-looking, 90's Windows themed background and animated weather icons giving it retro vibe.
+Retro Weather App is inspired by 90's Windows style. Vintage-looking background and animated weather icons are giving the project a retro vibe.
 
 ## Live demo
 
